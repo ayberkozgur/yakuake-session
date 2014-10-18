@@ -5,10 +5,10 @@ Actions=openTerminalHere;
 X-KDE-AuthorizeAction=shell_access
 
 [Desktop Action openTerminalHere]
-Name=Open Yakuake Here
-Name[es]=Abrir Yakuake aquí
-Name[es_ES]=Abrir Yakuake aquí
+Name=Open yakuaketwotwo Here
+Name[es]=Abrir yakuaketwotwo aquí
+Name[es_ES]=Abrir yakuaketwotwo aquí
 Icon=utilities-terminal
-Exec=yakuake-session --workdir %f
-#Exec=$HOME/.kde/share/kde4/services/ServiceMenus/yakuake-session --workdir %f
+Exec=yakuaketwo-session --workdir %f
+#Exec=$HOME/.kde/share/kde4/services/ServiceMenus/yakuaketwo-session --workdir %f
 X-Ubuntu-Gettext-Domain=desktop_kdebase

@@ -1,13 +1,13 @@
-yakuake-session - A script to create new yakuake sessions from command-line.<br />
+yakuaketwo-session - A script to create new yakuaketwo sessions from command-line.<br />
 Copyright 2010-2013 Jesús Torres <aplatanado@gulic.org>
 
-## What is yakuake-session?
+## What is yakuaketwo-session?
 
-yakuake-session is a Bash script that allows to create new sessions in Yakuake
+yakuaketwo-session is a Bash script that allows to create new sessions in yakuaketwo
 terminal emulator from command line. I made it mainly to get a better
-integration of Yakuake in KDE desktop environment. For example, thanks to it
-Yakuake can replace Konsole in "Open terminal here" action in Dolphin or we
-can setup a menu similar to Konsole Profiles widget but using Yakuake instead
+integration of yakuaketwo in KDE desktop environment. For example, thanks to it
+yakuaketwo can replace Konsole in "Open terminal here" action in Dolphin or we
+can setup a menu similar to Konsole Profiles widget but using yakuaketwo instead
 of Konsole.
 
 ## Bugs & known issues
@@ -21,69 +21,69 @@ breaks the command `qdbus` in Kubuntu 13.04/13.10. It can be fixed installing
 Clone this repository.
 
 ```
-git clone https://github.com/aplatanado/yakuake-session.git
+git clone https://github.com/aplatanado/yakuaketwo-session.git
 ```
 
-Copy the yakuake-session script to `~/bin`, `/usr/bin` or some other directory
+Copy the yakuaketwo-session script to `~/bin`, `/usr/bin` or some other directory
 in `$PATH` variable, if we want to avoid indicating the path of the script when
 invoked. For example, on Ubuntu:
 
 ```
-sudo cp yakuake-session /usr/bin
+sudo cp yakuaketwo-session /usr/bin
 ```
 
 ## Usage
 
-To invoke yakuake-session:
+To invoke yakuaketwo-session:
 
 ```
-$ yakuake-session
+$ yakuaketwo-session
 ```
 
-Without arguments, yakuake-session creates a new session in the currently
-running Yakuake terminal emulator. 
+Without arguments, yakuaketwo-session creates a new session in the currently
+running yakuaketwo terminal emulator. 
 
 The option `-e` allows to indicate a command to execute in the new session.
 
 ```
-$ yakuake-session -e ls
+$ yakuaketwo-session -e ls
 ```
 
 The argument `-t` sets the title for the new tab.
 
 ```
-$ yakuake-session -t "Title"
+$ yakuaketwo-session -t "Title"
 ```
 
-The session working directory is changed to the directory where yakuake-session
+The session working directory is changed to the directory where yakuaketwo-session
 was called, before execute the command. If we want to launch the command from
 user's home directory then we would use the option `-h`.
 
 ```
-$ yakuake-session -h -e ls
+$ yakuaketwo-session -h -e ls
 ```
 
 If the command requires some arguments, they are taken from non-option
-arguments passed to yakuake-session. That means that if some arguments for the
-command begin with `-`, they must passed to yakuake-session after `--`.
+arguments passed to yakuaketwo-session. That means that if some arguments for the
+command begin with `-`, they must passed to yakuaketwo-session after `--`.
 
 ```
-$ yakuake-session -h -e ssh -- -X user@example.com
+$ yakuaketwo-session -h -e ssh -- -X user@example.com
 ```
 
 Another useful option is `--workdir`. It allows to change the working directory
 before execute the command.
 
 ```
-$ yakuake-session --workdir /tmp -e ls
+$ yakuaketwo-session --workdir /tmp -e ls
 ```
 
-yakuake-session has many other options that were shown in help.
+yakuaketwo-session has many other options that were shown in help.
 
 ```
-$ yakuake-session --help
+$ yakuaketwo-session --help
 
-Usage: yakuake-session [options] [args]
+Usage: yakuaketwo-session [options] [args]
 
 Options:
   --help                    Show help about options.
@@ -92,7 +92,7 @@ Options:
   --hold, --noclose         Do not close the session automatically when the command ends.
   -p <property=value>       Change the value of a profile property (only for KDE 4).
   -e <cmd>                  Command to execute.
-  -q                        Do not open yakuake window.
+  -q                        Do not open yakuaketwo window.
   -t <title>                Set the title of the new tab
 
 Arguments:
@@ -102,7 +102,7 @@ Arguments:
 ## Action in Dolphin
 
 Dolphin provides the action "Open terminal here" that opens a Konsole terminal
-emulator in the specified folder. This behavior can be changed to use Yakuake
+emulator in the specified folder. This behavior can be changed to use yakuaketwo
 instead of Konsole coping `konsolehere.desktop` into KDE Service Menus. 
 
 ```
@@ -110,26 +110,26 @@ cp ServiceMenus/konsolehere.desktop ~/.kde/share/kde4/services/ServiceMenus/
 ```
 
 If we do not want to change the behavior of "Open terminal here", then copy
-`yakuakehere.desktop` instead to add the new action "Open yakuake here" to
+`yakuaketwohere.desktop` instead to add the new action "Open yakuaketwo here" to
 Dolphin.
 
 ```
-cp ServiceMenus/yakuakehere.desktop ~/.kde/share/kde4/services/ServiceMenus/ 
+cp ServiceMenus/yakuaketwohere.desktop ~/.kde/share/kde4/services/ServiceMenus/ 
 ```
 
 ## Quick Access Menu
 
 Konsole Profiles is a Plasma widget that allows to open a new terminal window,
 configured according to a select profile, and automatically execute a command
-in it. We can get something similar but for Yakuake using the QuickAccess
+in it. We can get something similar but for yakuaketwo using the QuickAccess
 widget. We only have to make a directory and setup a QuickAccess widget
 instance to use it as origin (I also like to disable the browsing). Then we
 add some "Link to Application" to that directory, such that each one use
-yakuake-session to create a new Yakuake session and to execute the command
+yakuaketwo-session to create a new yakuaketwo session and to execute the command
 that we want.
 
 The file `examples/username@example.com.desktop` contains an example that launch
-a ssh client in a new Yakuake session.
+a ssh client in a new yakuaketwo session.
 
 
 -- Jesús Torres <aplatanado@gulic.org>
